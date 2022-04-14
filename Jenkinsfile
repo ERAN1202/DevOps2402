@@ -1,4 +1,4 @@
-properties([pipelineTriggers([pollSCM('* * * * *')])])
+properties([parameters([string(defaultValue: 'aviel', name: 'NAME')]), pipelineTriggers([pollSCM('* * * * *')])])
 node {
     stage("clone"){
         git "https://github.com/avielb/DevOps2402.git"
